@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
 
         //setting click listeners for each button
         btnAdd.setOnClickListener {
-            val num1 = etNumberOne.toString()
-            val num2 = etNumberTwo.toString()
+            val num1 = etNumberOne.text.toString()
+            val num2 = etNumberTwo.text.toString()
 
             if (num1.isBlank()){
                 etNumberOne.error = "First number required"
@@ -53,8 +53,54 @@ class MainActivity : AppCompatActivity() {
             }
 
             addValues(num1.toInt(), num2.toInt())
+        }
+
+        //subtract button
+        btnSub.setOnClickListener {
+            val num1 = etNumberOne.text.toString()
+            val num2 = etNumberTwo.text.toString()
+
+            if (num1.isBlank()){
+                etNumberOne.error = "First number required"
+                return@setOnClickListener
+            }
+            if (num2.isBlank()){
+                etNumberTwo.error = "Second number required"
+                return@setOnClickListener
+            }
             subtractValues(num1.toInt(), num2.toInt())
+        }
+
+        //modulos button
+        btnMode.setOnClickListener {
+            val num1 = etNumberOne.text.toString()
+            val num2 = etNumberTwo.text.toString()
+
+            if (num1.isBlank()){
+                etNumberOne.error = "First number required"
+                return@setOnClickListener
+            }
+            if (num2.isBlank()){
+                etNumberTwo.error = "Second number required"
+                return@setOnClickListener
+            }
             modulusValues(num1.toInt(), num2.toInt())
+        }
+
+        //multiply button
+        btnMulti.setOnClickListener {
+            val num1 = etNumberOne.text.toString()
+            val num2 = etNumberTwo.text.toString()
+
+            if (num1.isBlank()){
+                etNumberOne.error = "First number required"
+                return@setOnClickListener
+            }
+            if (num2.isBlank()){
+                etNumberTwo.error = "Second number required"
+                return@setOnClickListener
+            }
+
             multipyValues(num1.toInt(), num2.toInt())
         }
     }
